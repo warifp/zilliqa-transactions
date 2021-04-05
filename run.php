@@ -5,6 +5,10 @@ use Curl\Curl;
 
 $curl = new Curl();
 
+echo "Zilliqa Trasactions (zilliqa wallet transaction tracking.)\n";
+echo "Base API : api.micromedia.id\n";
+echo "- warifp\n";
+
 echo "\n[?] Input List [data] : "; 
 $input = trim(fgets(STDIN));
 $list = file_get_contents($input);
@@ -43,3 +47,5 @@ for ($i = 0; $i < count($datas); $i++) {
         echo "\n";
     }
 }
+
+echo "\nWarning : Mengilangkan copyright saya take down server API.";
