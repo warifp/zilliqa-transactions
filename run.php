@@ -7,7 +7,9 @@ $curl = new Curl();
 
 echo "Zilliqa Trasactions (zilliqa wallet transaction tracking.)\n";
 echo "Base API : api.micromedia.id\n";
-echo "- warifp\n";
+echo "- warifp\n\n";
+
+echo "Big Thanks for Setya Mickala II (AirdropFind) has been sharing Airdrop.\n";
 
 echo "\n[?] Input List [data] : "; 
 $input = trim(fgets(STDIN));
