@@ -23,31 +23,34 @@ echo '[+] Ada ' . count($datas) . " data.\n\n";
 for ($i = 0; $i < count($datas); $i++) {
 
     $address = $datas[$i];
-    echo '[+] ' . $address . "\n";
 
-    $curl->get('https://api.micromedia.id/v1/zilliqa/transactions?address=' . $address);
+    if ($address) {
+        echo '[+] ' . $address . "\n";
 
-    if ($curl->error) {
-        echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
-    } else {
-        $response = $curl->response;
+        $curl->get('https://api.micromedia.id/v1/zilliqa/transactions?address=' . $address);
+
+        if ($curl->error) {
+            echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
+        } else {
+            $response = $curl->response;
         
-        if ($response->status == 200) {
-            foreach ($response->data as $key => $data) {
-                $message = $data->message ?? null;
+            if ($response->status == 200) {
+                foreach ($response->data as $key => $data) {
+                    $message = $data->message ?? null;
 
-                if($message){
-                    echo $data->message . "\n";
-                    break;
-                } else {
-                    $isSuccess = ($data->receiptSuccess) ? 'Success' : 'Failed';
-                    echo $key+1 . ". " . $data->direction . " | ". $data->hash . " | " . $data->value . " | " . $isSuccess . "\n";
+                    if ($message) {
+                        echo $data->message . "\n";
+                        break;
+                    } else {
+                        $isSuccess = ($data->receiptSuccess) ? 'Success' : 'Failed';
+                        echo $key+1 . ". " . $data->direction . " | ". $data->hash . " | " . $data->value . " | " . $isSuccess . "\n";
+                    }
                 }
             }
-        }
 
-        echo "\n";
+            echo "\n";
+        }
     }
 }
 
-echo "\nWarning : Mengilangkan copyright saya take down server API.";
+echo "Warning : Mengilangkan copyright saya take down server API.";
