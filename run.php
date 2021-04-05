@@ -5,7 +5,7 @@ use Curl\Curl;
 
 $curl = new Curl();
 
-echo "Zilliqa Trasactions (zilliqa wallet transaction tracking.)\n";
+echo "Zilliqa Transactions (zilliqa wallet transaction tracking.)\n";
 echo "Base API : api.micromedia.id\n";
 echo "- warifp\n\n";
 
