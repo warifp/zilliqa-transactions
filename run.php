@@ -37,7 +37,7 @@ for ($i = 0; $i < count($datas); $i++) {
                 $message = $data->message ?? null;
 
                 if($message){
-                    echo $data->message;
+                    echo $data->message . "\n";
                     break;
                 } else {
                     $isSuccess = ($data->receiptSuccess) ? 'Success' : 'Failed';
